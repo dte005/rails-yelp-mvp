@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row p-2">
+    <%= link_to 'Create', new_restaurant_path, class:"btn btn-success" %>
+  </div>
+<h1>Avaiables Restaurants</h1>
+<ul>
+  <% @restaurants.each do |rest| %>
+    <li>
+      <%= link_to rest.name, restaurant_path(rest.id) %><br>
+      <%= rest.address %>
+    </li>
+  <% end %>
+</ul>
+</div>
+

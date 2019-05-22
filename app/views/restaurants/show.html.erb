@@ -1,0 +1,17 @@
+<div class="container">
+<h1>Restaurant Details</h1>
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.category %></p>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+
+<%= link_to 'Add Review', new_restaurant_review_path(@restaurant) %>
+<h6>Reviews:</h6>
+<% @restaurant.reviews.each do |x| %>
+<p><%= x.content %> <%= '*' * x.rating %></p>
+<% end %>
+
+<%= link_to 'Return', restaurants_path, class:"btn btn-primary" %>
+<%= link_to 'Update', edit_restaurant_path(@restaurant), class:"btn btn-primary" %>
+<%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: { confirm: "are you shure?" }, class:"btn btn-danger" %>
+</div>

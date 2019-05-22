@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'Criando os restaurants'
+
+5.times do
+  Restaurant.create()
+end
+
+puts "Criado #{Restaurant.count} restaurants"
